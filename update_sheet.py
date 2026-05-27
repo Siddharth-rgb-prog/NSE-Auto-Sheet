@@ -17,7 +17,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 
 
-spreadsheet_id = "1p0IEQ6q-59fKkuki0KdQ5h9jwaAjCcQmrCzPqBlxeao" 
+spreadsheet_id = 1p0IEQ6q-59fKkuki0KdQ5h9jwaAjCcQmrCzPqBlxeao
 worksheet = client.open_by_key(spreadsheet_id).worksheet("Top 250 Stocks")
 
 # 2. NSE UDiFF Data Fetcher
