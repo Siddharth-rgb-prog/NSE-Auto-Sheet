@@ -16,8 +16,8 @@ scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 
-# अपनी गूगल शीट की ID यहाँ डालें (URL के बीच का हिस्सा)
-spreadsheet_id = "यहाँ_अपनी_शीट_की_ID_डालें" 
+
+spreadsheet_id = "1p0IEQ6q-59fKkuki0KdQ5h9jwaAjCcQmrCzPqBlxeao" 
 worksheet = client.open_by_key(spreadsheet_id).worksheet("Top 250 Stocks")
 
 # 2. NSE UDiFF Data Fetcher
@@ -48,7 +48,7 @@ def fetch_bhavcopy_for_date(date_obj):
                             vol_col = c
                             break
                     
-                    # सिर्फ EQ सीरीज और ETFs (LIQUID/BEES) को बाहर करना
+                    
                     if series_col in df.columns:
                         df = df[df[series_col].astype(str).str.strip() == 'EQ']
                     filter_keywords = 'BEES|ETF|GOLD|LIQUID|CASE|SILVER|LIQ'
